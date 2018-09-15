@@ -1,0 +1,30 @@
+@keyframes moveInButton{
+    0%{
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes init{
+    0%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100%{
+        clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
+    }
+}
+
+@keyframes moveIn{
+    0%{
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

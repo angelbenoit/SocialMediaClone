@@ -7,7 +7,7 @@ class LandingPage extends Component {
                 <div className="landing__header">
                     <div className="landing__header--text">
                         <h1 className="landing__header--title">Social Media</h1>
-                        <a href="#" className="btn btn-white btn-animated">Learn more</a>
+                        <a href="#" className="btn btn--white btn--animated">Learn more</a>
                     </div>
                 </div>
             </div>

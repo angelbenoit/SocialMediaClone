@@ -1,0 +1,23 @@
+.landing__header{
+    background-image: linear-gradient(to right bottom, aquamarine,gray, black);
+    height: 50vh;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    animation: init 1s forwards;
+    position: relative;
+
+    &--text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &--title{
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        text-shadow: 2px 2px rgb(75, 134, 114);
+        animation: moveIn 1s;
+    }
+}

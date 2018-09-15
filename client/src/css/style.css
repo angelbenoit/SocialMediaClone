@@ -1,10 +1,72 @@
-.login {
-  background-color: grey; }
-  .login__background {
-    background-color: green; }
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(150px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes init {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% {
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%); } }
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .8s; }
+
+.btn--animated {
+  animation: moveInButton .6s ease-out .75s;
+  animation-fill-mode: backwards; }
 
 .landing__header {
-  background-color: aquamarine;
+  background-image: linear-gradient(to right bottom, aquamarine, gray, black);
   height: 50vh;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
   animation: init 1s forwards;
@@ -21,70 +83,3 @@
     letter-spacing: 15px;
     text-shadow: 2px 2px #4b8672;
     animation: moveIn 1s; }
-
-@keyframes init {
-  0% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% {
-    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%); } }
-
-@keyframes moveIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-150px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 40px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all .2s;
-  position: relative; }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-
-.btn-white {
-  background-color: #fff;
-  color: #777; }
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .8s; }
-
-.btn-white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-.btn-animated {
-  animation: moveInButton .6s ease-out .75s;
-  animation-fill-mode: backwards; }
-
-@keyframes moveInButton {
-  0% {
-    opacity: 0;
-    transform: translateY(150px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
