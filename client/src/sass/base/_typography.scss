@@ -1,3 +1,34 @@
 body{
+    background-color: #585858;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.heading-secondary{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, aquamarine, black);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    transition: all .2s;
+
+    &:hover{
+        transform: skewY(5deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem grey;
+    }
+}
+
+.heading-tertiary{
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.paragraph{
+    font-size: .8rem;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
 }

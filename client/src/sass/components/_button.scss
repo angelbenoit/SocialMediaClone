@@ -34,6 +34,17 @@
         }
     }
 
+    &--aquamarine{
+        background-image: linear-gradient(to right, aquamarine, grey);
+        color: #fff;
+        font-weight: 800;
+        letter-spacing: 2px;
+
+        &::after{
+            background-color: aquamarine;
+        }
+    }
+
     &::after{
         content: "";
         display: inline-block;
