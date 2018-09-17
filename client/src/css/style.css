@@ -164,7 +164,20 @@ body {
     text-transform: uppercase;
     letter-spacing: 15px;
     text-shadow: 2px 2px #4b8672;
-    animation: moveIn 1s; }
+    animation: moveIn 2.5s; }
+
+.footer {
+  background-image: linear-gradient(to left, aquamarine, gray, black);
+  height: 25vh;
+  clip-path: polygon(0 75%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -25vh;
+  position: relative; }
+  .footer .test {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 65%;
+    width: 100%; }
 
 .section-about {
   background-color: #f7f7f7;

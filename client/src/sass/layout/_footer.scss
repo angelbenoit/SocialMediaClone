@@ -1,0 +1,15 @@
+.footer{
+    background-image: linear-gradient(to left, aquamarine,gray, black);
+    height: 25vh;
+    clip-path: polygon(0 75%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -25vh;
+    position: relative;
+
+    .test{
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        top: 65%;
+        width: 100%;
+    }
+}

@@ -48,16 +48,24 @@ class LandingPage extends Component {
                                     ullam voluptates consequuntur unde
                                     doloremque mollitia dolorum.
                                 </p>
+
+                                <div className="u-center-text">
+                                    <a href="#about" className="btn btn--aquamarine">Learn more</a>
+                                </div>
                             </div>
                             <div className="col-1-of-2">
                                 <div className="composition">
-                                    <img src={socializing} alt="socializing" className="composition__photo composition_photo--p1"/>
+                                    <img src={socializing} alt="socializing" className="composition__photo composition_photo--p1" />
                                 </div>
                             </div>
                         </div>
+                    </section>
 
-                        <div className="u-center-text">
-                            <a href="#about" className="btn btn--aquamarine">Learn more</a>
+                    <section className="footer">
+                        <div className="test">
+                            <h3>one</h3>
+                            <h3>two</h3>
+                            <h3>three</h3>
                         </div>
                     </section>
                 </main>
