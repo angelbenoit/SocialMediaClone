@@ -1,5 +1,6 @@
 body{
     background-color: #585858;
+    padding: 1rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -28,6 +29,7 @@ body{
 
 .paragraph{
     font-size: .8rem;
+    text-align: center;
     &:not(:last-child){
         margin-bottom: 3rem;
     }

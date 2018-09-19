@@ -53,19 +53,23 @@ class LandingPage extends Component {
                                     <a href="#about" className="btn btn--aquamarine">Learn more</a>
                                 </div>
                             </div>
-                            <div className="col-1-of-2">
-                                <div className="composition">
-                                    <img src={socializing} alt="socializing" className="composition__photo composition_photo--p1" />
-                                </div>
+                            <div className="composition col-1-of-2">
+                                <img src={socializing} alt="socializing" className="composition__photo composition_photo--p1" />
                             </div>
                         </div>
                     </section>
 
                     <section className="footer">
-                        <div className="test">
-                            <h3>one</h3>
-                            <h3>two</h3>
-                            <h3>three</h3>
+                        <div className="footer__text">
+                            <h3>Created by Angel Contreras</h3>
+                            <a
+                                href="https://www.github.com/angelbenoit/socialmediaclone"
+                                target="blank"
+                                className="footer__text--link"
+                            >
+                                <i class="fab fa-github"></i>
+                                &nbsp;Source Code
+                            </a>
                         </div>
                     </section>
                 </main>
