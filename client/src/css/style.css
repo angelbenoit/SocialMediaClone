@@ -113,7 +113,7 @@ body {
   transition: all .6s;
   outline-offset: 1.5rem;
   margin-left: 25%;
-  margin-top: 1rem; }
+  margin-top: 5rem; }
   .composition__photo:hover {
     outline: 1.5rem solid aquamarine;
     transform: scale(1.05);

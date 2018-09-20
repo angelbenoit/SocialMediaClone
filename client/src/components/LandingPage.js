@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import socializing from '../images/socializing.png';
+import { connect } from 'react-redux';
 
 class LandingPage extends Component {
     render() {
@@ -50,7 +51,11 @@ class LandingPage extends Component {
                                 </p>
 
                                 <div className="u-center-text">
-                                    <a href="#about" className="btn btn--aquamarine">Learn more</a>
+                                    {
+                                        this.props.auth && this.props.auth.displayName ?
+                                        <a href="/" className="btn btn--aquamarine">Dashboard</a> :
+                                        <a href="/auth/google" className="btn btn--aquamarine">Login</a>
+                                    }
                                 </div>
                             </div>
                             <div className="composition col-1-of-2">
@@ -78,4 +83,8 @@ class LandingPage extends Component {
     }
 }
 
-export default LandingPage;
+function mapStateToProps(state){
+    return { auth: state.auth }
+}
+
+export default connect(mapStateToProps)(LandingPage);
