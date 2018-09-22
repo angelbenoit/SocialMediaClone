@@ -172,6 +172,18 @@ body {
       color: white;
       text-decoration: none; }
 
+.posts__header {
+  min-height: 50vh;
+  background-image: linear-gradient(to right bottom, #f7f7f7, gray);
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  position: relative; }
+  .posts__header--text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 20rem 0;

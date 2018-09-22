@@ -53,7 +53,7 @@ class LandingPage extends Component {
                                 <div className="u-center-text">
                                     {
                                         this.props.auth && this.props.auth.displayName ?
-                                        <a href="/" className="btn btn--aquamarine">Dashboard</a> :
+                                        <a href="/posts" className="btn btn--aquamarine">View Posts</a> :
                                         <a href="/auth/google" className="btn btn--aquamarine">Login</a>
                                     }
                                 </div>
