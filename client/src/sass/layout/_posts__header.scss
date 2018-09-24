@@ -6,12 +6,45 @@
         clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
         position: relative;
 
+        @media only screen and (max-width: 925px) {
+            height: 75vh;
+        }
+
         &--text{
             position: absolute;
-            top: 30%;
+            top: 20%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+        }
+
+        &--instructions{
+            position: absolute;
+            width: 100%;
+            top: 47%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            @media only screen and (max-width: 925px) {
+                flex-direction: column;
+                font-size: 85%;
+                top: 55%;
+            }
+            //for iphone
+            @media only screen and (max-height: 600px) {
+                font-size: 50%;
+            }
+
+            .instructions{
+                width: 50%;
+                @media only screen and (max-width: 925px) {
+                    width: 100%;
+                }
+            }
         }
     }
 }
