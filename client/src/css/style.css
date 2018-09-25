@@ -191,12 +191,24 @@ body {
       color: white;
       text-decoration: none; }
 
+.posts__list {
+  min-height: 50vh;
+  margin-top: -7.5vh;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (max-width: 925px) {
+    .posts__list {
+      margin-top: -11.25vh; } }
+
 .posts__header {
   min-height: 50vh;
   background-image: linear-gradient(to right bottom, #f7f7f7, gray);
   clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
-  position: relative; }
-  @media only screen and (max-height: 600px) {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (max-width: 925px) {
     .posts__header {
       height: 75vh; } }
   .posts__header--text {
@@ -224,7 +236,8 @@ body {
       .posts__header--instructions {
         font-size: 50%; } }
     .posts__header--instructions .instructions {
-      width: 50%; }
+      width: 50%;
+      padding: 1rem; }
       @media only screen and (max-width: 925px) {
         .posts__header--instructions .instructions {
           width: 100%; } }

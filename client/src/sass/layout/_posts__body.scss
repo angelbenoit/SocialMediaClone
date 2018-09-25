@@ -1,0 +1,15 @@
+.posts__list{
+    min-height: 50vh;
+    margin-top: -7.5vh;
+    background-color: $color-grey-light-1;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: 925px) {
+        margin-top: -11.25vh;
+    }
+
+    &--addPost{
+
+    }
+}

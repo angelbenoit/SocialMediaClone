@@ -27,6 +27,9 @@ class Posts extends Component {
                 </div>
 
                 <div className="posts__list">
+                    <div className="u-center-text">
+                        <a href="#about" className="btn btn--aquamarine">Create Post</a>
+                    </div>
                 </div>
             </div>
         );

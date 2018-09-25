@@ -5,8 +5,10 @@
         background-image: linear-gradient(to right bottom, $color-grey-light-1,gray);
         clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
         position: relative;
+        display: flex;
+        flex-direction: column;
 
-        @media only screen and (max-height: 600px) {
+        @media only screen and (max-width: 925px) {
             height: 75vh;
         }
 
@@ -41,6 +43,7 @@
 
             .instructions{
                 width: 50%;
+                padding: 1rem;
                 @media only screen and (max-width: 925px) {
                     width: 100%;
                 }
