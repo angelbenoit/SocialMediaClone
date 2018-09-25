@@ -5,6 +5,10 @@
     animation: init 1s forwards;
     position: relative;
 
+    @media only screen and (max-height: 600px) {
+        height: 70vh;
+    }
+
     &--text{
         position: absolute;
         top: 50%;

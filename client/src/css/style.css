@@ -127,6 +127,9 @@ body {
   .composition__photo2:hover {
     transform: scale(1.05);
     box-shadow: 0 1.5rem 3.5rem grey; }
+  @media only screen and (max-height: 600px) {
+    .composition__photo2 {
+      width: 8rem; } }
 
 .row {
   display: flex;
@@ -146,6 +149,9 @@ body {
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
   animation: init 1s forwards;
   position: relative; }
+  @media only screen and (max-height: 600px) {
+    .landing__header {
+      height: 70vh; } }
   .landing__header--text {
     position: absolute;
     top: 50%;
@@ -165,6 +171,10 @@ body {
   clip-path: polygon(0 75%, 100% 0, 100% 100%, 0 100%);
   margin-top: -25vh;
   position: relative; }
+  @media only screen and (max-height: 600px) {
+    .footer {
+      height: 45vh;
+      margin-top: -45vh; } }
   .footer__text {
     display: flex;
     justify-content: space-around;
@@ -186,7 +196,7 @@ body {
   background-image: linear-gradient(to right bottom, #f7f7f7, gray);
   clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
   position: relative; }
-  @media only screen and (max-width: 925px) {
+  @media only screen and (max-height: 600px) {
     .posts__header {
       height: 75vh; } }
   .posts__header--text {
@@ -223,3 +233,6 @@ body {
   background-color: #f7f7f7;
   padding: 20rem 0;
   margin-top: -12.5vh; }
+  @media only screen and (max-height: 600px) {
+    .section-about {
+      margin-top: -17.5vh; } }

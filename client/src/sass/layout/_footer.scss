@@ -5,6 +5,11 @@
     margin-top: -25vh;
     position: relative;
 
+    @media only screen and (max-height: 600px) {
+        height: 45vh;
+        margin-top: -45vh;
+    }
+
     &__text{
         display: flex;
         justify-content: space-around;
