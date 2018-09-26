@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import postImage from '../images/post.png';
+import PostList from './PostList';
 
 class Posts extends Component {
     render() {
@@ -14,10 +15,10 @@ class Posts extends Component {
                         <div className="instructions">
                             <h4>How to create a new post</h4>
                             <p>
-                               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                               Unde, consectetur molestias. Sunt nobis, excepturi quam
-                               dolores voluptates rem vitae, corporis
-                               iste ratione nostrum, assumenda earum sed id cum in quaerat
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                Unde, consectetur molestias. Sunt nobis, excepturi quam
+                                dolores voluptates rem vitae, corporis
+                                iste ratione nostrum, assumenda earum sed id cum in quaerat
                             </p>
                         </div>
                         <div className="instructions">
@@ -29,6 +30,10 @@ class Posts extends Component {
                 <div className="posts__list">
                     <div className="u-center-text">
                         <a href="#about" className="btn btn--aquamarine">Create Post</a>
+                    </div>
+
+                    <div style={{marginTop: "2.5rem"}}>
+                        <PostList />
                     </div>
                 </div>
             </div>
