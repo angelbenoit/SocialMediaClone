@@ -7,17 +7,17 @@ class PostList extends Component {
         return (
             <div>
                 <PostItem
-                    name={faker.name.firstName()}
+                    name={faker.name.findName()}
                     title={faker.name.title()}
                 />
 
                 <PostItem
-                    name={faker.name.firstName()}
+                    name={faker.name.findName()}
                     title={faker.name.title()}
                 />
 
                 <PostItem
-                    name={faker.name.firstName()}
+                    name={faker.name.findName()}
                     title={faker.name.title()}
                 />
 
