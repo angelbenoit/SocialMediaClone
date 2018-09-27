@@ -131,6 +131,19 @@ body {
     .composition__photo2 {
       width: 8rem; } }
 
+.postItem {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+  padding: 1rem; }
+  .postItem:hover {
+    cursor: pointer;
+    background-color: #e4e4e4; }
+  .postItem__author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
 .row {
   display: flex;
   justify-content: space-between; }
