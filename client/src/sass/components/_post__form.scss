@@ -1,0 +1,19 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__label{
+        color: white;
+    }
+
+    &__input{
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid white;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}

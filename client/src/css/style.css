@@ -131,6 +131,19 @@ body {
     .composition__photo2 {
       width: 8rem; } }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .form__label {
+    color: white; }
+  .form__input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white; }
+    .form__input:focus {
+      outline: none; }
+
 .postItem {
   color: #363636;
   border-bottom: 1px solid #363636;
