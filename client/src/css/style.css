@@ -150,11 +150,25 @@ body {
   .form textarea {
     height: 15vh; }
 
+.formBackground {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #363636;
+  min-height: 90vh;
+  padding: 2rem; }
+
 .formBody {
   min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
+
+.formTitle {
+  background-color: #e4e4e4;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  color: #363636; }
 
 .formSubmit {
   width: 20%;

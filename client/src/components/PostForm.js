@@ -13,8 +13,8 @@ class PostForm extends Component {
                 <label className="form__label">{field.label}</label>
                 {
                     field.label === "Title" ?
-                    <input type="text" className="form__input"{...field.input} /> :
-                    <textarea type="text" className="form__input" {...field.input} />
+                        <input type="text" className="form__input"{...field.input} /> :
+                        <textarea type="text" className="form__input" {...field.input} />
                 }
 
                 <div className="formError">
@@ -24,7 +24,7 @@ class PostForm extends Component {
         );
     }
 
-    submitForm(values){
+    submitForm(values) {
         console.log(values);
     }
 
@@ -32,19 +32,25 @@ class PostForm extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form className="formBody" onSubmit={handleSubmit(this.submitForm)}>
-                <Field
-                    name="title"
-                    component={this.renderField}
-                    label="Title"
-                />
-                <Field
-                    name="body"
-                    component={this.renderField}
-                    label="Body"
-                />
-                <a href="" type='submit' className="btn btn--white u-center-text formSubmit">Post</a>
-            </form>
+            <div className="formBackground">
+                <div className="formTitle u-center-text">
+                    <h1>New Post Form</h1>
+                </div>
+                <form className="formBody" onSubmit={handleSubmit(this.submitForm)}>
+                    <Field
+                        name="title"
+                        component={this.renderField}
+                        label="Title"
+                    />
+                    <Field
+                        name="body"
+                        component={this.renderField}
+                        label="Body"
+                    />
+                    <a href="" type='submit' className="btn btn--white u-center-text formSubmit">Post</a>
+                </form>
+            </div>
+
         );
     }
 }
@@ -55,7 +61,7 @@ function validate(values) {
     if (!values.title)
         errors.title = "Enter a title";
 
-    if(!values.body)
+    if (!values.body)
         errors.body = "Enter body text";
 
     return errors;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import postImage from '../images/post.png';
+import { NavLink } from 'react-router-dom';
 import PostList from './PostList';
 
 class Posts extends Component {
@@ -29,7 +30,7 @@ class Posts extends Component {
 
                 <div className="posts__list">
                     <div className="u-center-text">
-                        <a href="#about" className="btn btn--aquamarine">Create Post</a>
+                        <NavLink to="/newpost" className="btn btn--aquamarine">Create Post</NavLink>
                     </div>
 
                     <div style={{marginTop: "2.5rem"}}>
