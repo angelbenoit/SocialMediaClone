@@ -4,6 +4,13 @@
     justify-content: space-between;
     font-weight: bold;
 
+    &__error{
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding-top: 1rem;
+    }
+
     &__label{
         color: white;
         font-style: italic;
@@ -48,6 +55,15 @@
     border-top-right-radius: 5rem;
     border-bottom-right-radius: 5rem;
     color: $color-black-light-1;
+}
+
+.formRedirect{
+    display: flex;
+    justify-content: space-between;
+
+    &__icon{
+        font-size: 150%;
+    }
 }
 
 .formSubmit{

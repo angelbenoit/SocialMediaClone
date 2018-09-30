@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
+import { NavLink } from 'react-router-dom';
 import * as actions from '../Actions';
 import { connect } from 'react-redux';
 
@@ -17,7 +18,7 @@ class PostForm extends Component {
                         <textarea type="text" className="form__input" {...field.input} />
                 }
 
-                <div className="formError">
+                <div className="form__error">
                     {touched ? error : ""}
                 </div>
             </div>
@@ -47,7 +48,12 @@ class PostForm extends Component {
                         component={this.renderField}
                         label="Body"
                     />
-                    <a href="" type='submit' className="btn btn--white u-center-text formSubmit">Post</a>
+                    <div className="formRedirect">
+                        <NavLink className="btn btn--white formRedirect__back" to="/posts">
+                            <i class="far fa-arrow-alt-circle-left formRedirect__icon"></i> Go back
+                        </NavLink>
+                        <a href="" type='submit' className="btn btn--white u-center-text formSubmit">Post</a>
+                    </div>
                 </form>
             </div>
 

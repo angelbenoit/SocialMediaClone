@@ -136,6 +136,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-weight: bold; }
+  .form__error {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 1rem; }
   .form__label {
     color: white;
     font-style: italic; }
@@ -169,6 +174,12 @@ body {
   border-top-right-radius: 5rem;
   border-bottom-right-radius: 5rem;
   color: #363636; }
+
+.formRedirect {
+  display: flex;
+  justify-content: space-between; }
+  .formRedirect__icon {
+    font-size: 150%; }
 
 .formSubmit {
   width: 20%;
