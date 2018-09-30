@@ -13,8 +13,8 @@ class PostForm extends Component {
                 <label className="form__label">{field.label}</label>
                 {
                     field.label === "Title" ?
-                    <input className="form__input" type="text" {...field.input} /> :
-                    <textarea type="text" className="form__input" />
+                    <input type="text" className="form__input"{...field.input} /> :
+                    <textarea type="text" className="form__input" {...field.input} />
                 }
 
                 <div className="formError">
@@ -30,8 +30,9 @@ class PostForm extends Component {
 
     render() {
         const { handleSubmit } = this.props;
+
         return (
-            <form className="sessionForm" onSubmit={handleSubmit(this.submitForm)}>
+            <form className="formBody" onSubmit={handleSubmit(this.submitForm)}>
                 <Field
                     name="title"
                     component={this.renderField}
@@ -42,7 +43,7 @@ class PostForm extends Component {
                     component={this.renderField}
                     label="Body"
                 />
-                <button type='submit' className="formSubmit">Submit</button>
+                <a href="" type='submit' className="btn btn--white u-center-text formSubmit">Post</a>
             </form>
         );
     }
@@ -52,10 +53,10 @@ function validate(values) {
     const errors = {};
 
     if (!values.title)
-        errors.title = "Enter a subject";
+        errors.title = "Enter a title";
 
     if(!values.body)
-        errors.body = "Enter minutes";
+        errors.body = "Enter body text";
 
     return errors;
 }
