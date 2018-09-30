@@ -177,9 +177,19 @@ body {
 
 .formRedirect {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  min-height: 10vh; }
   .formRedirect__icon {
     font-size: 150%; }
+  @media only screen and (max-width: 700px) {
+    .formRedirect {
+      font-size: 85%;
+      flex-direction: column;
+      min-height: 15vh; } }
+  @media only screen and (max-width: 500px) {
+    .formRedirect {
+      min-height: 20vh;
+      font-size: 65%; } }
 
 .formSubmit {
   width: 20%;

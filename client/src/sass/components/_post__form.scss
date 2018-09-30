@@ -60,9 +60,21 @@
 .formRedirect{
     display: flex;
     justify-content: space-between;
+    min-height: 10vh;
 
     &__icon{
         font-size: 150%;
+    }
+
+    @media only screen and (max-width: 700px) {
+        font-size: 85%;
+        flex-direction: column;
+        min-height: 15vh;
+    }
+
+    @media only screen and (max-width: 500px) {
+        min-height: 20vh;
+        font-size: 65%;
     }
 }
 

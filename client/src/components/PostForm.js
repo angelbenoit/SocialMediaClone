@@ -49,10 +49,12 @@ class PostForm extends Component {
                         label="Body"
                     />
                     <div className="formRedirect">
-                        <NavLink className="btn btn--white formRedirect__back" to="/posts">
+                        <NavLink className="btn btn--white formRedirect__back formSubmit u-center-text" to="/posts">
                             <i class="far fa-arrow-alt-circle-left formRedirect__icon"></i> Go back
                         </NavLink>
-                        <a href="" type='submit' className="btn btn--white u-center-text formSubmit">Post</a>
+                        <NavLink className="btn btn--white u-center-text formSubmit u-center-text" to="/posts">
+                            Post
+                        </NavLink>
                     </div>
                 </form>
             </div>
