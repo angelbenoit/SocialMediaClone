@@ -25,7 +25,15 @@ module.exports = app => {
     });
 
     app.get('/api/post_list', (req, res) => {
+        Posts.find({}, function(err, post_list){
+            res.json(post_list);
+        })
+    });
 
+    app.get('/api/testcreate', (req, res) => {
+        Posts.create({test: "test"}, function(err, newlyCreated){
+            console.log(newlyCreated)
+        })
     });
 
     app.post('/api/creating_post' , (req, res) => {
