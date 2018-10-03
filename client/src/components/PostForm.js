@@ -4,7 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 import { NavLink, withRouter } from 'react-router-dom';
 import * as actions from '../Actions';
 import { connect } from 'react-redux';
-import PostFormButton from './PostFormButton';
 
 class PostForm extends Component {
     //render form with correct fields
@@ -27,25 +26,21 @@ class PostForm extends Component {
         );
     }
 
-    submitForm(values) {
-        //console.log(values);
-        axios.post('/api/testcreate', values)
-             .then(this.props.history.push("/posts"))
-    }
-
-    redirectPost(){
-        this.props.history.push("/posts");
-    }
 
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, history } = this.props;
+        //console.log(this.props);
 
+        function submitForm(values){
+            axios.post('/api/testcreate', values)
+             .then(history.push("/posts"))
+        }
         return (
             <div className="formBackground">
                 <div className="formTitle u-center-text">
                     <h1>New Post Form</h1>
                 </div>
-                <form className="formBody" onSubmit={handleSubmit(this.submitForm)}>
+                <form className="formBody" onSubmit={handleSubmit(submitForm)}>
                     <Field
                         name="title"
                         component={this.renderField}
@@ -61,7 +56,9 @@ class PostForm extends Component {
                             <i class="far fa-arrow-alt-circle-left formRedirect__icon"></i> Go back
                         </NavLink>
 
-                        <PostFormButton/>
+                        <button className="btn_nonlink btn_nonlink--white formRedirect__back formSubmit u-center-text">
+                            Post
+                        </button>
                     </div>
                 </form>
             </div>
@@ -86,4 +83,4 @@ export default withRouter(reduxForm({
     form: "PostsNew",
     fields: ['title', 'body'],
     validate,
-})(connect(null, actions)(PostForm)));
+})(withRouter(connect(null, actions)(PostForm))));
