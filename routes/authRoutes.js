@@ -2,7 +2,7 @@ const passport = require('passport');
 const express = require('express');
 const mongoose = require('mongoose');
 const User = mongoose.model('user');
-const Posts = mongoose.model('posts');
+const Posts = mongoose.model('post');
 const app = express();
 
 module.exports = app => {
@@ -31,9 +31,12 @@ module.exports = app => {
     });
 
     app.get('/api/testcreate', (req, res) => {
-        Posts.create({test: "test"}, function(err, newlyCreated){
-            console.log(newlyCreated)
+        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+            post_list.posts.push({title: "test2", body: "body2"});
+            post_list.save();
+            console.log(post_list.posts);
         })
+        res.end();
     });
 
     app.post('/api/creating_post' , (req, res) => {

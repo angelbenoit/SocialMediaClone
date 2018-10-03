@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const postSchema = new Schema({
-    posts: Array
+    posts: [
+        {
+            title: String,
+            body: String
+        }
+    ]
 });
-mongoose.model('posts', postSchema);
+mongoose.model('post', postSchema);
