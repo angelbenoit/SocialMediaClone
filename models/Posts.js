@@ -4,7 +4,17 @@ const postSchema = new Schema({
     posts: [
         {
             title: String,
-            body: String
+            body: String,
+            author: String,
+            date: Date,
+            upvotes: Number,
+            downvotes: Number,
+            comments: [
+                {
+                    commentAuthor: String,
+                    commentBody: String
+                }
+            ]
         }
     ]
 });

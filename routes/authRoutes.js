@@ -30,12 +30,12 @@ module.exports = app => {
         })
     });
 
-    app.get('/api/testcreate', (req, res) => {
+    app.post('/api/testcreate', (req, res) => {
         Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
-            post_list.posts.push({title: "test2", body: "body2"});
+            post_list.posts.push(req.body);
             post_list.save();
-            console.log(post_list.posts);
         })
+        console.log(req.body);
         res.end();
     });
 

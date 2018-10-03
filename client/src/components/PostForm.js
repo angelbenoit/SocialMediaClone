@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Field, reduxForm } from 'redux-form';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import * as actions from '../Actions';
 import { connect } from 'react-redux';
+import PostFormButton from './PostFormButton';
 
 class PostForm extends Component {
     //render form with correct fields
@@ -26,7 +28,13 @@ class PostForm extends Component {
     }
 
     submitForm(values) {
-        console.log(values);
+        //console.log(values);
+        axios.post('/api/testcreate', values)
+             .then(this.props.history.push("/posts"))
+    }
+
+    redirectPost(){
+        this.props.history.push("/posts");
     }
 
     render() {
@@ -52,9 +60,8 @@ class PostForm extends Component {
                         <NavLink className="btn btn--white formRedirect__back formSubmit u-center-text" to="/posts">
                             <i class="far fa-arrow-alt-circle-left formRedirect__icon"></i> Go back
                         </NavLink>
-                        <NavLink className="btn btn--white u-center-text formSubmit u-center-text" to="/posts">
-                            Post
-                        </NavLink>
+
+                        <PostFormButton/>
                     </div>
                 </form>
             </div>
@@ -75,8 +82,8 @@ function validate(values) {
     return errors;
 }
 
-export default reduxForm({
+export default withRouter(reduxForm({
     form: "PostsNew",
     fields: ['title', 'body'],
     validate,
-})(connect(null, actions)(PostForm));
+})(connect(null, actions)(PostForm)));

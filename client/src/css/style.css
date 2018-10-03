@@ -106,6 +106,38 @@ body {
   animation: moveInButton .6s ease-out .75s;
   animation-fill-mode: backwards; }
 
+.btn_nonlink {
+  border: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative; }
+  .btn_nonlink:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+    .btn_nonlink:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn_nonlink--white {
+    background-color: #fff;
+    color: #777; }
+    .btn_nonlink--white::after {
+      background-color: #fff; }
+  .btn_nonlink::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .8s; }
+
 .composition__photo {
   width: 45%;
   box-shadow: 0 1rem 3rem grey;
