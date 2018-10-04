@@ -32,7 +32,7 @@ class PostForm extends Component {
         //console.log(this.props);
 
         function submitForm(values){
-            axios.post('/api/testcreate', values)
+            axios.post('/api/create_post', values)
              .then(history.push("/posts"))
         }
         return (

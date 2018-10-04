@@ -30,21 +30,21 @@ module.exports = app => {
         })
     });
 
-    app.post('/api/testcreate', (req, res) => {
-        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
-            post_list.posts.push(req.body);
-            post_list.save();
-        })
-        console.log(req.body);
-        res.end();
-    });
+    app.post('/api/create_post', (req, res) => {
+        const userPost = req.body;
+        //add author's name to object
+        userPost['author'] = req.user.displayName;
 
-    app.post('/api/creating_post' , (req, res) => {
+        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+            post_list.posts.push(userPost);
+            post_list.save();
+        });
         User.findById(req.user._id, function(err, user){
-            user.postHistory.push(req.body);
+            user.postHistory.push(userPost);
             user.save();
         })
 
         res.end();
-    })
+    });
+
 };
