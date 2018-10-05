@@ -9,7 +9,7 @@ class PostForm extends Component {
     //render form with correct fields
     renderField(field) {
         const { meta: { touched, error } } = field;
-        console.log(field);
+        //console.log(field);
         return (
             <div className="form">
                 <label className="form__label">{field.label}</label>
@@ -28,11 +28,12 @@ class PostForm extends Component {
 
 
     render() {
-        const { handleSubmit, history } = this.props;
+        const { handleSubmit, history, fetchPosts } = this.props;
         //console.log(this.props);
 
         function submitForm(values){
             axios.post('/api/create_post', values)
+             .then(fetchPosts())
              .then(history.push("/posts"))
         }
         return (

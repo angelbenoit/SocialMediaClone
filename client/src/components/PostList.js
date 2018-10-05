@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PostItem from './PostItem';
-import faker from 'faker';
 import { connect } from 'react-redux';
 import * as actions from '../Actions';
 
@@ -17,6 +16,7 @@ class PostList extends Component {
                     name={item.author}
                     title={item.title}
                     comments={item.comments}
+                    date={item.date}
                 />
             })
         else

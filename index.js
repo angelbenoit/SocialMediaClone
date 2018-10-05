@@ -2,20 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const keys = require('./config/keys.js');
+const key = require('./config/key.js');
 const bodyParser = require('body-parser');
 
 require('./models/User.js');
 require('./models/Posts.js');
 require('./services/passport.js');
-mongoose.connect(keys.mongoURI);
+mongoose.connect(key.mongoURI);
 
 
 const app = express();
 
 app.use(cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys:['fdfvfgnhrfb']
+    key:['fdfvfgnhrfb']
 }));
 
 app.use(passport.initialize());

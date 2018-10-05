@@ -8,6 +8,6 @@ export const fetchUser = () => async (dispatch) => {
 
 export const fetchPosts = () => async (dispatch) => {
     const res = await axios.get("/api/post_list");
-    //console.log(res.data[0].posts);
+    console.log(`Fetching posts: ${res.data[0].posts}`);
     dispatch({type: FETCH_POSTS, payload: res.data[0].posts});
 };
