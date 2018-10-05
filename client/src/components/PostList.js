@@ -10,33 +10,25 @@ class PostList extends Component {
     }
 
     getPosts(){
-        if(this.props.postList)
-            this.props.postList.map(item => {
-                console.log(item);
+        let Posts = [];
+        if(this.props.postList && this.props.postList.length > 0)
+            Posts = this.props.postList.map(item => {
+                return <PostItem
+                    name={item.author}
+                    title={item.title}
+                    comments={item.comments}
+                />
             })
         else
-            console.log("No Posts")
+            Posts.push(<h1>No posts yet</h1>);
+
+        return Posts;
     }
 
     render() {
-        this.getPosts();
         return (
             <div>
-                <PostItem
-                    name={faker.name.findName()}
-                    title={faker.name.title()}
-                />
-
-                <PostItem
-                    name={faker.name.findName()}
-                    title={faker.name.title()}
-                />
-
-                <PostItem
-                    name={faker.name.findName()}
-                    title={faker.name.title()}
-                />
-
+                {this.getPosts()}
             </div>
         );
     }

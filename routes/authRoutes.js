@@ -34,6 +34,8 @@ module.exports = app => {
         const userPost = req.body;
         //add author's name to object
         userPost['author'] = req.user.displayName;
+        //add the date
+        userPost['date'] = new Date().toDateString();
 
         Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
             post_list.posts.push(userPost);

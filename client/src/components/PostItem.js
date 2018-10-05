@@ -11,7 +11,7 @@ class PostItem extends Component {
                     <h5>{new Date().toDateString()}</h5>
                 </div>
                 <div className="postItem__comments u-center-text">
-                    <p>{(Math.random() * 1000).toFixed(0)} comments</p>
+                    <p>{this.props.comments.length} comments</p>
                 </div>
             </div>
         );
