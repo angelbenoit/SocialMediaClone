@@ -35,6 +35,7 @@ class PostForm extends Component {
             axios.post('/api/create_post', values)
              .then(fetchPosts())
              .then(history.push("/posts"))
+            fetchPosts();
         }
         return (
             <div className="formBackground">

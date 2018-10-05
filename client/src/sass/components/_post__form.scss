@@ -55,6 +55,11 @@
     border-top-right-radius: 5rem;
     border-bottom-right-radius: 5rem;
     color: $color-black-light-1;
+
+    @media only screen and (max-height: 650px) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 .formRedirect{
