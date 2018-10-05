@@ -19,7 +19,7 @@ passport.use(new GoogleStrategy({
     clientID: key.googleClientID,
     clientSecret: key.googleClientSecret,
     //callbackURL: '/auth/google/callback',
-    callbackURL: '	https://angelsocialmedia.herokuapp.com/auth/google/redirect',
+    callbackURL: 'https://angelsocialmedia.herokuapp.com/auth/google/callback',
     proxy: true
 }, (accessToken, refreshToken, profile, done) => {
 
