@@ -69,21 +69,21 @@
 
     &__icon{
         font-size: 150%;
+
+        @media only screen and (max-width: 700px) {
+            font-size: 120%;
+        }
     }
 
     @media only screen and (max-width: 700px) {
         font-size: 85%;
         flex-direction: column;
+        background-color: white;
+        padding-top: .75rem;
         min-height: 15vh;
-    }
-
-    @media only screen and (max-width: 500px) {
-        min-height: 20vh;
-        font-size: 65%;
     }
 }
 
 .formSubmit{
-    width: 20%;
     align-self: center;
 }
