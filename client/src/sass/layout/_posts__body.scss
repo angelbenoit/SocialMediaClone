@@ -9,7 +9,11 @@
         margin-top: -11.25vh;
     }
 
-    &--addPost{
+    @media only screen and (max-height: 700px) {
+        margin-top: -13.5vh;
+    }
 
+    &--addPost{
+        margin-top: 2.5rem;
     }
 }

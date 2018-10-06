@@ -29,7 +29,7 @@ class Posts extends Component {
                 </div>
 
                 <div className="posts__list">
-                    <div className="u-center-text">
+                    <div className="u-center-text posts__list--addPost">
                         <NavLink to="/newpost" className="btn btn--aquamarine">Create Post</NavLink>
                     </div>
 

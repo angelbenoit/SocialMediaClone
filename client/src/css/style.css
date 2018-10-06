@@ -322,6 +322,11 @@ body {
   @media only screen and (max-width: 925px) {
     .posts__list {
       margin-top: -11.25vh; } }
+  @media only screen and (max-height: 700px) {
+    .posts__list {
+      margin-top: -13.5vh; } }
+  .posts__list--addPost {
+    margin-top: 2.5rem; }
 
 .posts__header {
   min-height: 50vh;
@@ -332,7 +337,8 @@ body {
   flex-direction: column; }
   @media only screen and (max-height: 700px) {
     .posts__header {
-      font-size: 65%; } }
+      font-size: 65%;
+      height: 90vh; } }
   @media only screen and (max-width: 925px) {
     .posts__header {
       height: 75vh; } }

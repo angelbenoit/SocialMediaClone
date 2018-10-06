@@ -10,6 +10,7 @@
 
         @media only screen and (max-height: 700px) {
             font-size: 65%;
+            height: 90vh;
         }
 
         @media only screen and (max-width: 925px) {
@@ -48,6 +49,7 @@
             .instructions{
                 width: 50%;
                 padding: 1rem;
+
                 @media only screen and (max-width: 925px) {
                     width: 100%;
                 }
