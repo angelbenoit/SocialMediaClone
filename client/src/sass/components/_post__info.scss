@@ -1,0 +1,25 @@
+.postInfo{
+    min-height: 100vh;
+    background-color: $color-grey-light-2;
+    text-align: center;
+
+    @media only screen and (max-width: 650px) {
+        font-size: 85%;
+    }
+
+    &__body{
+        padding: 2.5rem 5rem;
+
+        @media only screen and (max-width: 650px) {
+            padding: 0 1rem;
+            font-size: 85%;
+        }
+    }
+
+    &__header{
+        display: flex;
+        justify-content: space-around;
+
+        border-bottom: 1px solid $color-grey-light-3;
+    }
+}

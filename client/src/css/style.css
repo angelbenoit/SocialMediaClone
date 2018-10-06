@@ -234,6 +234,24 @@ body {
 .formSubmit {
   align-self: center; }
 
+.postInfo {
+  min-height: 100vh;
+  background-color: #e4e4e4;
+  text-align: center; }
+  @media only screen and (max-width: 650px) {
+    .postInfo {
+      font-size: 85%; } }
+  .postInfo__body {
+    padding: 2.5rem 5rem; }
+    @media only screen and (max-width: 650px) {
+      .postInfo__body {
+        padding: 0 1rem;
+        font-size: 85%; } }
+  .postInfo__header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #c7c7c7; }
+
 .postItem {
   color: #363636;
   border-bottom: 1px solid #363636;
