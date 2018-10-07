@@ -2,6 +2,9 @@
     min-height: 100vh;
     background-color: $color-grey-light-2;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @media only screen and (max-width: 650px) {
         font-size: 85%;

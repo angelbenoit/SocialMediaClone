@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CommentList from './CommentList';
 
 class PostInfo extends Component {
     render() {
@@ -25,7 +26,7 @@ class PostInfo extends Component {
 
                 </div>
                 <div>
-                    Comments
+                    <CommentList/>
                 </div>
             </div>
         );
