@@ -17,6 +17,7 @@ class PostList extends Component {
                     title={item.title}
                     comments={item.comments}
                     date={item.date}
+                    id={item._id}
                 />
             })
         else

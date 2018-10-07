@@ -142,13 +142,16 @@ body {
     transition: all .8s; }
 
 .comment {
-  background-color: #c7c7c7;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #363636; }
+  border-bottom: 1px solid #363636;
+  font-size: 75%;
+  padding-bottom: 1rem; }
   .comment__header {
     display: flex;
     justify-content: space-around; }
+  .comment__list {
+    background: linear-gradient(to right top, #f7f7f7, #e4e4e4, #c7c7c7); }
 
 .composition__photo {
   width: 45%;

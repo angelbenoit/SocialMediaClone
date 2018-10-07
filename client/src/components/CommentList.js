@@ -4,7 +4,7 @@ import CommentItem from './CommentItem';
 class CommentList extends Component {
     render() {
         return (
-            <div>
+            <div className="comment__list">
                 <h5>Comments:</h5>
                 <CommentItem/>
                 <CommentItem/>

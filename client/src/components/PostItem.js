@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class PostItem extends Component {
+
+    redirectToPost(id){
+        console.log(id)
+        this.props.history.push(`/post/${id}`);
+    }
+
     render() {
         return (
-            <div className="postItem">
+            <div className="postItem" onClick={() => this.redirectToPost(this.props.id)}>
                 <div className="postItem__title u-center-text"><h1>{this.props.title}</h1></div>
                 <div className="postItem__author">
                     <p>Rating: {(Math.random() * 1000).toFixed(0)}</p>
@@ -18,4 +25,4 @@ class PostItem extends Component {
     }
 }
 
-export default PostItem;
+export default withRouter(PostItem);

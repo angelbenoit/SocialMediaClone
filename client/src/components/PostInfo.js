@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import CommentList from './CommentList';
 
 class PostInfo extends Component {
+    componentWillMount(){
+        console.log(this.props.match.params.id)
+    }
     render() {
         return (
             <div className="postInfo">

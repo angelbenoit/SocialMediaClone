@@ -1,11 +1,16 @@
 .comment{
-    background-color: $color-grey-light-3;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid $color-black-light-1;
+    font-size: 75%;
+    padding-bottom: 1rem;
 
     &__header{
         display: flex;
         justify-content: space-around;
+    }
+
+    &__list{
+        background: linear-gradient(to right top, $color-grey-light-1, $color-grey-light-2, $color-grey-light-3);
     }
 }
