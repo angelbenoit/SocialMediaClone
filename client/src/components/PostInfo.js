@@ -1,39 +1,55 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
+import { connect } from 'react-redux';
+import * as actions from '../Actions';
 
 class PostInfo extends Component {
-    componentWillMount(){
-        console.log(this.props.match.params.id)
+    componentWillMount() {
+        this.props.fetchSpecifiedPostData(this.props.match.params.id);
     }
-    render() {
-        return (
-            <div className="postInfo">
-                <div>
-                    <h1 className="heading-secondary">Title</h1>
-                    <div className="postInfo__header">
-                        <h4>Author Name</h4>
-                        <h5>Posted on DATE</h5>
-                    </div>
-                    <div className="postInfo__body">
-                        <p className="paragraph">
-                            Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit.
-                            Quos, repellendus maxime praesentium
-                            blanditiis obcaecati a ab repudiandae
-                            harum explicabo, cumque exercitationem
-                            recusandae! Cum,
-                            commodi veniam nostrum debitis
-                            facere expedita? Earum.
-                        </p>
-                    </div>
 
+    loadPost() {
+        if (this.props.postInfo) {
+            let data = this.props.postInfo;
+            return (
+                <div className="postInfo">
+                    <div>
+                        <h1 className="heading-secondary">{data.title}</h1>
+                        <div className="postInfo__header">
+                            <h4>By {data.author}</h4>
+                            <h5>Posted on {data.date}</h5>
+                        </div>
+                        <div className="postInfo__body">
+                            <p className="paragraph">
+                                {data.body}
+                            </p>
+                        </div>
+
+                    </div>
+                    <div>
+                        <CommentList />
+                    </div>
                 </div>
-                <div>
-                    <CommentList/>
+            );
+        }
+        else{
+            return(
+                <div className="postInfo">
+                    Cannot find post
                 </div>
-            </div>
-        );
+            )
+        }
+    }
+
+    render() {
+        return this.loadPost();
     }
 }
 
-export default PostInfo;
+function mapStateToProps(state) {
+    return {
+        postInfo: state.postInfo
+    }
+}
+
+export default connect(mapStateToProps, actions)(PostInfo);
