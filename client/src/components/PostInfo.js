@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
+import CommentForm from './CommentForm';
 import { connect } from 'react-redux';
 import * as actions from '../Actions';
 
@@ -25,6 +26,9 @@ class PostInfo extends Component {
                             </p>
                         </div>
 
+                    </div>
+                    <div>
+                        <CommentForm/>
                     </div>
                     <div>
                         <CommentList />
