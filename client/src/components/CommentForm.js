@@ -9,10 +9,10 @@ class CommentForm extends Component {
         const { meta: { touched, error } } = field;
         return (
             <div className="form">
-                <label className="form__label">{field.label}</label>
-                <input type="text" className="form__input"{...field.input} />
+                <label className="form__label--black">{field.label}</label>
+                <input type="text" className="form__input--black"{...field.input} />
 
-                <div className="form__error">
+                <div className="form__error--black">
                     {touched ? error : ""}
                 </div>
             </div>
@@ -21,11 +21,16 @@ class CommentForm extends Component {
 
 
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, fetchSpecifiedPostData, postId } = this.props;
 
         function submitForm(values){
-            console.log(values)
+            const comment = values;
+            comment['postId'] = postId;
+            axios.post("/api/postComment", values)
+                .then(fetchSpecifiedPostData(postId));
+            fetchSpecifiedPostData(postId);
         }
+
         return (
             <form className="formBody" onSubmit={handleSubmit(submitForm)}>
                 <Field
@@ -34,7 +39,7 @@ class CommentForm extends Component {
                     label="Comment"
                 />
                 <button className="btn_nonlink btn_nonlink--white formRedirect__back formSubmit u-center-text">
-                    Post
+                    Post Comment
                 </button>
             </form>
         );

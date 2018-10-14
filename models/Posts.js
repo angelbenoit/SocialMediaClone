@@ -12,8 +12,8 @@ const postSchema = new Schema({
             downvotes: Number,
             comments: [
                 {
-                    commentAuthor: String,
-                    commentBody: String
+                    comment: String,
+                    postId: String
                 }
             ]
         }

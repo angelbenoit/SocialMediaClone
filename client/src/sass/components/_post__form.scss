@@ -9,11 +9,20 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         padding-top: 1rem;
+        &--black{
+            color: $color-black-light-1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-top: 1rem;
+        }
     }
 
     &__label{
         color: white;
         font-style: italic;
+        &--black{
+            color: $color-black-light-1;
+        }
     }
 
     &__input{
@@ -22,6 +31,16 @@
         border-bottom: 2px solid white;
         color: white;
         font-size: 1.5rem;
+
+        &--black{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid $color-black-light-1;
+            color: $color-black-light-1;
+            &:focus{
+                outline: none;
+            }
+        }
 
         &:focus{
             outline: none;

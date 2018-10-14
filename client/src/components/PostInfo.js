@@ -28,7 +28,9 @@ class PostInfo extends Component {
 
                     </div>
                     <div>
-                        <CommentForm/>
+                        <CommentForm
+                            postId={this.props.match.params.id}
+                        />
                     </div>
                     <div>
                         <CommentList />

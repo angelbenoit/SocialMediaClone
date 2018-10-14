@@ -50,4 +50,17 @@ module.exports = app => {
         res.end();
     });
 
+    app.post('/api/postComment', (req, res) => {
+        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+            for(let i = 0; i < post_list.posts.length; i++){
+                if(String(post_list.posts[i]._id) === req.body.postId){
+                    post_list.posts[i].comments.push(req.body);
+                    break;
+                }
+            }
+            post_list.save();
+        });
+        res.end();
+    });
+
 };
