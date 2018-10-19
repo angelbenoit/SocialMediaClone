@@ -21,13 +21,14 @@ class CommentForm extends Component {
 
 
     render() {
-        const { handleSubmit, fetchSpecifiedPostData, postId } = this.props;
+        const { handleSubmit, fetchSpecifiedPostData, postId, reset } = this.props;
 
         function submitForm(values){
             const comment = values;
             comment['postId'] = postId;
             axios.post("/api/postComment", values)
-                .then(fetchSpecifiedPostData(postId));
+                .then(fetchSpecifiedPostData(postId))
+                .then(reset());
             fetchSpecifiedPostData(postId);
         }
 

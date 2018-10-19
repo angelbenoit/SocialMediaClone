@@ -5,19 +5,12 @@ class CommentItem extends Component {
         return (
             <div className="comment">
                 <div className="comment__header">
-                    <h4>Name</h4>
-                    <h5>Date Posted</h5>
+                    <h4>{this.props.userName}</h4>
+                    <h5>{this.props.date}</h5>
                 </div>
                 <div>
                     <p>
-                        Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit.
-                        Rem, voluptatem? Vel assumenda,
-                        nihil iste tenetur molestias
-                        nulla eum omnis aspernatur
-                        blanditiis! Consectetur, nesciunt
-                        ex dignissimos aperiam esse fugiat
-                        recusandae similique.
+                        {this.props.comment}
                     </p>
                 </div>
             </div>

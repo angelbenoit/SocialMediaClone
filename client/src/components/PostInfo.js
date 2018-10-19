@@ -33,7 +33,9 @@ class PostInfo extends Component {
                         />
                     </div>
                     <div>
-                        <CommentList />
+                        <CommentList
+                            comments={this.props.postInfo.comments}
+                        />
                     </div>
                 </div>
             );

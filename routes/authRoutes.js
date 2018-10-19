@@ -54,6 +54,7 @@ module.exports = app => {
         Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
             const comment = req.body;
             comment['user'] = req.user.displayName;
+            comment['date'] = ((new Date()).toDateString());
             for(let i = 0; i < post_list.posts.length; i++){
                 if(String(post_list.posts[i]._id) === req.body.postId){
                     post_list.posts[i].comments.push(comment);
