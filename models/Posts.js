@@ -13,7 +13,9 @@ const postSchema = new Schema({
             comments: [
                 {
                     comment: String,
-                    postId: String
+                    postId: String,
+                    user: String,
+                    date: String
                 }
             ]
         }
