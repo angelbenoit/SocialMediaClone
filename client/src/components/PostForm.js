@@ -34,7 +34,6 @@ class PostForm extends Component {
         function submitForm(values){
             axios.post('/api/create_post', values)
              .then(fetchPosts())
-             .then(fetchPosts())
              .then(history.push("/posts"))
             fetchPosts();
         }

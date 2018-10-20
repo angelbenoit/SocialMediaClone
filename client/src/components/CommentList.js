@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import CommentItem from './CommentItem';
 import * as actions from '../Actions';
+import { connect } from 'react-redux';
 
 class CommentList extends Component {
+    componentWillMount(){
+        this.props.fetchPosts();
+    }
+
     renderComments(){
         if(this.props.comments && this.props.comments.length > 0){
             const commentList = [];
@@ -32,4 +37,10 @@ class CommentList extends Component {
     }
 }
 
-export default CommentList;
+function mapStateToProps(state) {
+    return {
+        user: state.auth
+    }
+}
+
+export default connect(mapStateToProps, actions)(CommentList);

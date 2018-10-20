@@ -97,6 +97,16 @@
             }
         }
 
+        &--aquamarine{
+            background: linear-gradient(to right bottom, aquamarine,#777);
+            color: #fff;
+            font-weight: 1000;
+
+            &::after{
+                background: linear-gradient(to right bottom, aquamarine,#777);
+            }
+        }
+
         &::after{
             content: "";
             display: inline-block;

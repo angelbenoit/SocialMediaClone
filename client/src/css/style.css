@@ -129,6 +129,12 @@ body {
     color: #777; }
     .btn_nonlink--white::after {
       background-color: #fff; }
+  .btn_nonlink--aquamarine {
+    background: linear-gradient(to right bottom, aquamarine, #777);
+    color: #fff;
+    font-weight: 1000; }
+    .btn_nonlink--aquamarine::after {
+      background: linear-gradient(to right bottom, aquamarine, #777); }
   .btn_nonlink::after {
     content: "";
     display: inline-block;

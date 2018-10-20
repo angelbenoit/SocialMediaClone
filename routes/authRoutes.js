@@ -34,6 +34,7 @@ module.exports = app => {
         const userPost = req.body;
         //add author's name to object
         userPost['author'] = req.user.displayName;
+        userPost['authorId'] = req.user.googleId;
         //add the date
         const day = ((new Date()).toDateString());
         userPost['date'] = day;
@@ -54,6 +55,7 @@ module.exports = app => {
         Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
             const comment = req.body;
             comment['user'] = req.user.displayName;
+            comment['authorId'] = req.user.googleId;
             comment['date'] = ((new Date()).toDateString());
             for(let i = 0; i < post_list.posts.length; i++){
                 if(String(post_list.posts[i]._id) === req.body.postId){

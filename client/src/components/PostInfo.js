@@ -10,7 +10,8 @@ class PostInfo extends Component {
     }
 
     loadPost() {
-        if (this.props.postInfo) {
+        if (this.props.postInfo && this.props.userInfo) {
+            {console.log(this.props.postInfo.authorId, this.props.userInfo.googleId)}
             let data = this.props.postInfo;
             return (
                 <div className="postInfo">
@@ -20,6 +21,10 @@ class PostInfo extends Component {
                             <h4>By {data.author}</h4>
                             <h5>Posted on {data.date}</h5>
                         </div>
+                        {
+                            this.props.userInfo.googleId === this.props.postInfo.authorId ?
+                            <button className="btn_nonlink btn_nonlink--aquamarine">Delete Post</button> : ""
+                        }
                         <div className="postInfo__body">
                             <p className="paragraph">
                                 {data.body}
@@ -56,7 +61,8 @@ class PostInfo extends Component {
 
 function mapStateToProps(state) {
     return {
-        postInfo: state.postInfo
+        postInfo: state.postInfo,
+        userInfo: state.auth
     }
 }
 
