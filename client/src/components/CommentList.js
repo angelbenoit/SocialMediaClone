@@ -9,7 +9,7 @@ class CommentList extends Component {
     }
 
     renderComments(){
-        if(this.props.comments && this.props.comments.length > 0){
+        if(this.props.user && this.props.comments && this.props.comments.length > 0){
             const commentList = [];
             this.props.comments.forEach(comment => {
                 commentList.push(
@@ -17,6 +17,10 @@ class CommentList extends Component {
                         userName={comment.user}
                         comment={comment.comment}
                         date={comment.date}
+                        delete={this.props.user.googleId === comment.authorId}
+                        deleteComment={this.props.deleteComment}
+                        commentId={comment._id}
+                        postId={this.props.postId}
                     />
                 )
             })

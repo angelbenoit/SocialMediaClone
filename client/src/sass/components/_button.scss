@@ -121,3 +121,18 @@
             transition: all .8s;
         }
 }
+
+.btnComment{
+    background: none;
+    border: none;
+    padding: .75rem;
+    border-radius: 5px;
+    background: linear-gradient(to left top, #777,silver);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover{
+        background: #777;
+    }
+}

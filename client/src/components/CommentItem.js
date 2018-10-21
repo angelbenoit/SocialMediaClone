@@ -13,6 +13,17 @@ class CommentItem extends Component {
                         {this.props.comment}
                     </p>
                 </div>
+                {
+                    this.props.delete ?
+                    <div>
+                        <button
+                            className="btnComment"
+                            onClick={() => this.props.deleteComment(this.props.postId, this.props.commentId)}
+                        >
+                            Delete
+                        </button>
+                    </div> : ""
+                }
             </div>
         );
     }

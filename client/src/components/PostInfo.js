@@ -11,7 +11,11 @@ class PostInfo extends Component {
     }
 
     deletePost(id){
-        axios.post('/api/removepost')
+        axios.post('/api/removepost', {id})
+    }
+
+    deleteComment(postId, commentId){
+        axios.post('/api/removecomment', {postId, commentId})
     }
 
     loadPost() {
@@ -30,7 +34,7 @@ class PostInfo extends Component {
                             this.props.userInfo.googleId === this.props.postInfo.authorId ?
                             <button
                                 className="btn_nonlink btn_nonlink--aquamarine"
-                                onClick={this.deletePost}
+                                onClick={() => this.deletePost(this.props.postInfo._id)}
                             >
                                 Delete Post
                             </button> : ""
@@ -50,6 +54,8 @@ class PostInfo extends Component {
                     <div>
                         <CommentList
                             comments={this.props.postInfo.comments}
+                            deleteComment={this.deleteComment}
+                            postId={this.props.postInfo._id}
                         />
                     </div>
                 </div>

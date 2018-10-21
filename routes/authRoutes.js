@@ -71,9 +71,27 @@ module.exports = app => {
     app.post('/api/removepost', (req, res) => {
         Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
             for(let i = 0; i < post_list.posts.length; i++){
-                if(post_list.posts[i].authorId === req.user.googleId){
+                if(post_list.posts[i].authorId === req.user.googleId && String(post_list.posts[i]._id) === req.body.id){
                     post_list.posts.splice(i, 1);
                     break;
+                }
+            }
+            post_list.save();
+        });
+        res.end();
+    });
+
+    app.post('/api/removecomment', (req, res) => {
+        console.log(req.body)
+        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+            for(let i = 0; i < post_list.posts.length; i++){
+                if(String(post_list.posts[i]._id) === req.body.postId){
+                    for(let j = 0; j < post_list.posts[i].comments.length; j++){
+                        if(String(post_list.posts[i].comments[j]._id) === req.body.commentId){
+                            post_list.posts[j].comments.splice(j, 1);
+                            break;
+                        }
+                    }
                 }
             }
             post_list.save();
