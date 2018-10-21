@@ -18,7 +18,6 @@ class CommentList extends Component {
                         comment={comment.comment}
                         date={comment.date}
                         delete={this.props.user.googleId === comment.authorId}
-                        deleteComment={this.props.deleteComment}
                         commentId={comment._id}
                         postId={this.props.postId}
                     />

@@ -3,6 +3,7 @@ import axios from 'axios';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import * as actions from '../Actions';
 
 class PostInfo extends Component {
@@ -12,10 +13,8 @@ class PostInfo extends Component {
 
     deletePost(id){
         axios.post('/api/removepost', {id})
-    }
-
-    deleteComment(postId, commentId){
-        axios.post('/api/removecomment', {postId, commentId})
+             .then(this.props.fetchPosts())
+             .then(this.props.history.push("/posts"))
     }
 
     loadPost() {
@@ -54,7 +53,6 @@ class PostInfo extends Component {
                     <div>
                         <CommentList
                             comments={this.props.postInfo.comments}
-                            deleteComment={this.deleteComment}
                             postId={this.props.postInfo._id}
                         />
                     </div>
@@ -82,4 +80,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, actions)(PostInfo);
+export default withRouter(connect(mapStateToProps, actions)(PostInfo));

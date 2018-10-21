@@ -88,7 +88,7 @@ module.exports = app => {
                 if(String(post_list.posts[i]._id) === req.body.postId){
                     for(let j = 0; j < post_list.posts[i].comments.length; j++){
                         if(String(post_list.posts[i].comments[j]._id) === req.body.commentId){
-                            post_list.posts[j].comments.splice(j, 1);
+                            post_list.posts[i].comments.splice(j, 1);
                             break;
                         }
                     }

@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import {connect} from 'react-redux';
+import * as actions from '../Actions';
 
 class CommentItem extends Component {
+    deleteComment(postId, commentId){
+        axios.post('/api/removecomment', {postId, commentId})
+             .then(this.props.fetchPosts())
+             .then(this.props.fetchSpecifiedPostData(this.props.postId))
+        this.props.fetchPosts();
+    }
+
     render() {
         return (
             <div className="comment">
@@ -18,7 +28,7 @@ class CommentItem extends Component {
                     <div>
                         <button
                             className="btnComment"
-                            onClick={() => this.props.deleteComment(this.props.postId, this.props.commentId)}
+                            onClick={() => this.deleteComment(this.props.postId, this.props.commentId)}
                         >
                             Delete
                         </button>
@@ -29,4 +39,4 @@ class CommentItem extends Component {
     }
 }
 
-export default CommentItem;
+export default connect(null, actions)(CommentItem);
