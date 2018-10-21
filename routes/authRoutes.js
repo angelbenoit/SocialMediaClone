@@ -68,4 +68,17 @@ module.exports = app => {
         res.end();
     });
 
+    app.post('/api/removepost', (req, res) => {
+        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+            for(let i = 0; i < post_list.posts.length; i++){
+                if(post_list.posts[i].authorId === req.user.googleId){
+                    post_list.posts.splice(i, 1);
+                    break;
+                }
+            }
+            post_list.save();
+        });
+        res.end();
+    });
+
 };

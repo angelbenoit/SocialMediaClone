@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import { connect } from 'react-redux';
@@ -7,6 +8,10 @@ import * as actions from '../Actions';
 class PostInfo extends Component {
     componentWillMount() {
         this.props.fetchSpecifiedPostData(this.props.match.params.id);
+    }
+
+    deletePost(id){
+        axios.post('/api/removepost')
     }
 
     loadPost() {
@@ -23,7 +28,12 @@ class PostInfo extends Component {
                         </div>
                         {
                             this.props.userInfo.googleId === this.props.postInfo.authorId ?
-                            <button className="btn_nonlink btn_nonlink--aquamarine">Delete Post</button> : ""
+                            <button
+                                className="btn_nonlink btn_nonlink--aquamarine"
+                                onClick={this.deletePost}
+                            >
+                                Delete Post
+                            </button> : ""
                         }
                         <div className="postInfo__body">
                             <p className="paragraph">
