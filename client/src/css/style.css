@@ -46,7 +46,8 @@ body {
 
 .paragraph {
   font-size: .8rem;
-  text-align: center; }
+  text-align: center;
+  padding: 0 7.5rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
@@ -202,6 +203,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   font-weight: bold; }
+  .form__comment {
+    width: 80%;
+    align-self: center;
+    height: 10rem; }
   .form__error {
     color: white;
     text-transform: uppercase;

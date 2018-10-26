@@ -8,7 +8,7 @@ class CommentForm extends Component {
     renderField(field) {
         const { meta: { touched, error } } = field;
         return (
-            <div className="form">
+            <div className="form form__comment">
                 <label className="form__label--black">{field.label}</label>
                 <input type="text" className="form__input--black"{...field.input} />
 

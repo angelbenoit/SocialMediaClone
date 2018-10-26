@@ -4,6 +4,12 @@
     justify-content: space-between;
     font-weight: bold;
 
+    &__comment{
+        width: 80%;
+        align-self: center;
+        height: 10rem;
+    }
+
     &__error{
         color: white;
         text-transform: uppercase;

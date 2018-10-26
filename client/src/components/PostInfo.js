@@ -3,7 +3,7 @@ import axios from 'axios';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import * as actions from '../Actions';
 
 class PostInfo extends Component {
@@ -42,6 +42,7 @@ class PostInfo extends Component {
                             <p className="paragraph">
                                 {data.body}
                             </p>
+                            <NavLink to="/posts" className="btn btn--aquamarine">&larr; Back</NavLink>
                         </div>
 
                     </div>

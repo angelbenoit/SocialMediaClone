@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import socializing from '../images/socializing.png';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 class LandingPage extends Component {
     render() {
@@ -30,30 +31,15 @@ class LandingPage extends Component {
                                     Social Media site similar to reddit
                                 </h3>
                                 <p className="paragraph">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Voluptas aliquam et
-                                    deleniti officiis, quia facere a nisi
-                                    maxime iure magnam obcaecati illum rerum
-                                    ullam voluptates consequuntur unde
-                                    doloremque mollitia dolorum.
+                                    Share to the world what's on your mind.
+                                    Responsive site, fits on all devices, whether
+                                     a mobile phone or a widescreen monitor, this site
+                                     will work.
                                 </p>
-
-                                <h3 className="heading-tertiary u-center-text">
-                                    Edit your profile
-                                </h3>
-                                <p className="paragraph">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Voluptas aliquam et
-                                    deleniti officiis, quia facere a nisi
-                                    maxime iure magnam obcaecati illum rerum
-                                    ullam voluptates consequuntur unde
-                                    doloremque mollitia dolorum.
-                                </p>
-
                                 <div className="u-center-text">
                                     {
                                         this.props.auth && this.props.auth.displayName ?
-                                        <a href="/posts" className="btn btn--aquamarine">View Posts</a> :
+                                        <NavLink to="/posts" className="btn btn--aquamarine">View Posts</NavLink> :
                                         <a href="/auth/google" className="btn btn--aquamarine">Login</a>
                                     }
                                 </div>
