@@ -12,6 +12,10 @@
         @media only screen and (max-width: 350px) {
             padding: 10px 30px;
         }
+
+        @media only screen and (max-height: 750px) {
+            padding: 7.5px 25px;
+        }
     }
 
     &:hover{
@@ -79,6 +83,11 @@
         position: relative;
         cursor: pointer;
 
+        @media only screen and (max-height: 750px) {
+            padding: 10px 25px;
+            font-size: 75%;
+        }
+
         &:hover{
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
@@ -134,5 +143,9 @@
 
     &:hover{
         background: #777;
+    }
+
+    @media only screen and (max-height: 750px) {
+        padding: .25rem;
     }
 }

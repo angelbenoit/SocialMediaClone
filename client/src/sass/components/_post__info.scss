@@ -17,6 +17,10 @@
             padding: 0 1rem;
             font-size: 85%;
         }
+
+        @media only screen and (max-height: 750px) {
+            font-size: 55%;
+        }
     }
 
     &__header{

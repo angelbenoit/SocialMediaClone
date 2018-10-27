@@ -50,6 +50,9 @@ body {
   padding: 0 7.5rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+  @media only screen and (max-height: 750px) {
+    .paragraph {
+      padding: 0 1rem; } }
 
 .u-center-text {
   text-align: center; }
@@ -68,6 +71,9 @@ body {
   @media only screen and (max-width: 350px) {
     .btn:link, .btn:visited {
       padding: 10px 30px; } }
+  @media only screen and (max-height: 750px) {
+    .btn:link, .btn:visited {
+      padding: 7.5px 25px; } }
 
 .btn:hover {
   transform: translateY(-3px);
@@ -120,6 +126,10 @@ body {
   transition: all .2s;
   position: relative;
   cursor: pointer; }
+  @media only screen and (max-height: 750px) {
+    .btn_nonlink {
+      padding: 10px 25px;
+      font-size: 75%; } }
   .btn_nonlink:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
@@ -160,6 +170,9 @@ body {
   cursor: pointer; }
   .btnComment:hover {
     background: #777; }
+  @media only screen and (max-height: 750px) {
+    .btnComment {
+      padding: .25rem; } }
 
 .comment {
   display: flex;
@@ -300,6 +313,9 @@ body {
       .postInfo__body {
         padding: 0 1rem;
         font-size: 85%; } }
+    @media only screen and (max-height: 750px) {
+      .postInfo__body {
+        font-size: 55%; } }
   .postInfo__header {
     display: flex;
     justify-content: space-around;
