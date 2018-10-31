@@ -16,10 +16,9 @@ class Posts extends Component {
                         <div className="instructions">
                             <h4>How to create a new post</h4>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Unde, consectetur molestias. Sunt nobis, excepturi quam
-                                dolores voluptates rem vitae, corporis
-                                iste ratione nostrum, assumenda earum sed id cum in quaerat
+                                Click on the "Create Post" button and fill out the form.
+                                After you submit the post, you will be redirected back
+                                 to this pages, and your new post will be displayed here.
                             </p>
                         </div>
                         <div className="instructions">
