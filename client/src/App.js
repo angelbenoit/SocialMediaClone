@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Login from './components/login';
-import Profile from './components/profile';
 import LandingPage from './components/LandingPage';
 import PostInfo from './components/PostInfo';
 import Posts from './components/Posts';
@@ -25,8 +23,6 @@ class App extends Component {
             <Route exact path="/newpost" component={PostForm}/>
             <Route exact path="/post/:id" component={PostInfo} />
             <Route exact path="/posts" component={Posts}/>
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/profile' component={Profile} />
           </div>
         </BrowserRouter>
       </div>

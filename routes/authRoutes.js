@@ -3,26 +3,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const User = mongoose.model('user');
 const Posts = mongoose.model('post');
+const Authentication = require('../controllers/authentication');
+const requireAuth = passport.authenticate('jwt', { session: false });
+const requireSignin = passport.authenticate('local', { session: false });
 const app = express();
 
 module.exports = app => {
-    app.get('/auth/google', passport.authenticate('google', {
-        scope: ['profile', 'email']
-    })
-    );
-
-    app.get('/auth/google/callback', passport.authenticate('google'),(req,res)=>{
-        res.redirect('/');
-    });
-
-    app.get('/api/logout', (req, res) => {
-        req.logout();
-        res.redirect('/');
-    });
-
-    app.get('/api/current_user', (req, res) => {
-        res.send(req.user);
-    });
+    app.get('/api/current_user', requireAuth, Authentication.getUser);
+    app.post('/signin', requireSignin, Authentication.signin);
+    app.post('/signup', Authentication.signup);
 
     app.get('/api/post_list', (req, res) => {
         Posts.find({}, function(err, post_list){
