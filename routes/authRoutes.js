@@ -20,15 +20,15 @@ module.exports = app => {
         })
     });
 
-    app.post('/api/create_post', (req, res) => {
+    app.post('/api/create_post', requireAuth, (req, res) => {
         const userPost = req.body;
+        console.log(userPost)
         //add author's name to object
-        userPost['author'] = req.user.displayName;
-        userPost['authorId'] = req.user.googleId;
+        userPost['author'] = req.user.email;
+        //userPost['authorId'] = req.user.googleId;
         //add the date
         const day = ((new Date()).toDateString());
         userPost['date'] = day;
-
         Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
             post_list.posts.push(userPost);
             post_list.save();

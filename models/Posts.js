@@ -8,8 +8,6 @@ const postSchema = new Schema({
             author: String,
             authorId: String,
             date: String,
-            upvotes: Number,
-            downvotes: Number,
             comments: [
                 {
                     comment: String,

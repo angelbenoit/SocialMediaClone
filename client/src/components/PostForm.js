@@ -32,7 +32,12 @@ class PostForm extends Component {
         //console.log(this.props);
 
         function submitForm(values){
-            axios.post('/api/create_post', values)
+            axios({
+                method: "post",
+                url: '/api/create_post',
+                headers: {authorization: localStorage.getItem("token")},
+                data: values
+            })
              .then(fetchPosts())
              .then(history.push("/posts"))
             fetchPosts();
