@@ -13,7 +13,7 @@ export const fetchPosts = () => async (dispatch) => {
 };
 
 export const fetchSpecifiedPostData = (id) => async (dispatch) => {
-    const res = await axios.get("/api/post_list", {headers: {authorization: localStorage.getItem("token")}});
+    const res = await axios.get("/api/post_list");
     const postList = res.data[0].posts;
     //matchPost holds the post object if it matches the id passed in
     let matchPost = {};

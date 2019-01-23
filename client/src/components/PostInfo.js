@@ -8,6 +8,7 @@ import * as actions from '../Actions';
 
 class PostInfo extends Component {
     componentWillMount() {
+        this.props.fetchUser();
         this.props.fetchSpecifiedPostData(this.props.match.params.id);
     }
 
@@ -19,7 +20,7 @@ class PostInfo extends Component {
 
     loadPost() {
         if (this.props.postInfo && this.props.userInfo) {
-            {console.log(this.props.postInfo.authorId, this.props.userInfo.googleId)}
+            {console.log(this.props.postInfo.author, this.props.userInfo.email)}
             let data = this.props.postInfo;
             return (
                 <div className="postInfo">
@@ -30,7 +31,7 @@ class PostInfo extends Component {
                             <h5>Posted on {data.date}</h5>
                         </div>
                         {
-                            this.props.userInfo.googleId === this.props.postInfo.authorId ?
+                            this.props.userInfo.email === this.props.postInfo.author ?
                             <button
                                 className="btn_nonlink btn_nonlink--aquamarine"
                                 onClick={() => this.deletePost(this.props.postInfo._id)}
@@ -77,7 +78,7 @@ class PostInfo extends Component {
 function mapStateToProps(state) {
     return {
         postInfo: state.postInfo,
-        userInfo: state.auth
+        userInfo: state.user
     }
 }
 

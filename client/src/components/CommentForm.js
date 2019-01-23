@@ -26,7 +26,12 @@ class CommentForm extends Component {
         function submitForm(values){
             const comment = values;
             comment['postId'] = postId;
-            axios.post("/api/postComment", values)
+            axios({
+                method: "post",
+                url: '/api/postComment',
+                headers: {authorization: localStorage.getItem("token")},
+                data: values
+            })
                 .then(fetchSpecifiedPostData(postId))
                 .then(reset());
             fetchSpecifiedPostData(postId);

@@ -36,6 +36,7 @@
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
-    "scss-compile": "^0.1.7"
+    "scss-compile": "^0.1.7",
+    "uuid": "^3.3.2"
   }
 }
