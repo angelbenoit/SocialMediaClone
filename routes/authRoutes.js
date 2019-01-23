@@ -15,6 +15,7 @@ module.exports = app => {
 
     app.get('/api/post_list', (req, res) => {
         Posts.find({}, function(err, post_list){
+            console.log(post_list)
             res.json(post_list);
         })
     });

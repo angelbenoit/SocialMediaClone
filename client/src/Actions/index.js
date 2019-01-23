@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_POSTS, FETCH_POST_ITEM } from "./types";
+import { FETCH_USER, FETCH_POSTS, FETCH_POST_ITEM, AUTH_ERROR, AUTH_USER } from "./types";
 
 export const fetchUser = () => async (dispatch) => {
     const res = await axios.get("/api/current_user", {headers: {authorization: localStorage.getItem("token")}});
