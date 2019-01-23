@@ -13,10 +13,16 @@
     "scss-compile": "^0.1.7"
   },
   "proxy": {
-    "api": {
+    "/api": {
       "target": "http://localhost:5000"
     },
     "/profile/": {
+      "target": "http://localhost:5000"
+    },
+    "/api/signup": {
+      "target": "http://localhost:5000"
+    },
+    "/api/signin": {
       "target": "http://localhost:5000"
     }
   },

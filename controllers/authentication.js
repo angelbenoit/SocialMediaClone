@@ -1,6 +1,7 @@
 const jwt = require('jwt-simple');
 const User = require('../models/User');
 const config = require('../config');
+const mongoose = require("mongoose");
 
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
@@ -20,6 +21,7 @@ exports.getUser = function(req, res, next) {
 exports.signup = function(req, res, next) {
   const email = req.body.email;
   const password = req.body.password;
+  console.log(req.body)
 
   if (!email || !password) {
     return res.status(422).send({ error: 'You must provide email and password'});
@@ -27,6 +29,7 @@ exports.signup = function(req, res, next) {
 
   // See if a user with the given email exists
   User.findOne({ email: email }, function(err, existingUser) {
+    console.log(existingUser)
     if (err) { return next(err); }
 
     // If a user with email does exist, return an error

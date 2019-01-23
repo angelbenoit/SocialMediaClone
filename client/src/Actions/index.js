@@ -29,9 +29,10 @@ export const fetchSpecifiedPostData = (id) => async (dispatch) => {
 };
 
 export const signup = (formProps, callback) => async dispatch => {
+    console.log(formProps);
     try {
       const response = await axios.post(
-        '/signup',
+        'http://localhost:5000/api/signup',
         formProps
       );
 
@@ -46,7 +47,7 @@ export const signup = (formProps, callback) => async dispatch => {
   export const signin = (formProps, callback) => async dispatch => {
     try {
       const response = await axios.post(
-        '/signin',
+        '/api/signin',
         formProps
       );
 

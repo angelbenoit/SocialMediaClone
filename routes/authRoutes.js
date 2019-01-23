@@ -10,8 +10,8 @@ const app = express();
 
 module.exports = app => {
     app.get('/api/current_user', requireAuth, Authentication.getUser);
-    app.post('/signin', requireSignin, Authentication.signin);
-    app.post('/signup', Authentication.signup);
+    app.post('/api/signin', requireSignin, Authentication.signin);
+    app.post('/api/signup', Authentication.signup);
 
     app.get('/api/post_list', (req, res) => {
         Posts.find({}, function(err, post_list){

@@ -3,6 +3,7 @@ import LandingPage from './components/LandingPage';
 import PostInfo from './components/PostInfo';
 import Posts from './components/Posts';
 import PostForm from './components/PostForm';
+import Signup from './components/auth/Signup';
 import {BrowserRouter,Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './Actions';
@@ -20,6 +21,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route exact path='/' component={LandingPage} />
+            <Route exact path='/signup' component={Signup} />
             <Route exact path="/newpost" component={PostForm}/>
             <Route exact path="/post/:id" component={PostInfo} />
             <Route exact path="/posts" component={Posts}/>
