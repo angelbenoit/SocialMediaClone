@@ -15,25 +15,27 @@ class Signup extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.onSubmit)}>
-        <fieldset>
-          <label>Email</label>
+      <form onSubmit={handleSubmit(this.onSubmit)} className="formSubmit">
+        <div className="formItem">
+          <label className="formItem__label">Email</label>
           <Field
             name="email"
             type="text"
             component="input"
+            className="formItem__input"
             autoComplete="none"
           />
-        </fieldset>
-        <fieldset>
-          <label>Password</label>
+        </div>
+        <div className="formItem">
+          <label className="formItem__label">Password</label>
           <Field
             name="password"
             type="password"
             component="input"
+            className="formItem__input"
             autoComplete="none"
           />
-        </fieldset>
+        </div>
         <div>{this.props.errorMessage}</div>
         <button>Sign Up!</button>
       </form>

@@ -38,9 +38,12 @@ class LandingPage extends Component {
                                 </p>
                                 <div className="u-center-text">
                                     {
-                                        this.props.auth && this.props.auth.displayName ?
+                                        localStorage.getItem("token") ?
                                         <NavLink to="/posts" className="btn btn--aquamarine">View Posts</NavLink> :
-                                        <a href="/auth/google" className="btn btn--aquamarine">Login</a>
+                                        <React.Fragment>
+                                            <NavLink to="/signin" className="btn btn--aquamarine">Login</NavLink>
+                                            <NavLink to="/signup" className="btn btn--aquamarine">Sign Up</NavLink>
+                                        </React.Fragment>
                                     }
                                 </div>
                             </div>
