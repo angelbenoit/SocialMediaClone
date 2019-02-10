@@ -29,7 +29,7 @@ module.exports = app => {
         //add the date
         const day = ((new Date()).toDateString());
         userPost['date'] = day;
-        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+        Posts.findById("5c5f855a1c9d440000127910", function(err, post_list){
             post_list.posts.push(userPost);
             post_list.save();
         });
@@ -42,7 +42,7 @@ module.exports = app => {
     });
 
     app.post('/api/postComment', requireAuth, (req, res) => {
-        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+        Posts.findById("5c5f855a1c9d440000127910", function(err, post_list){
             const comment = req.body;
             comment['user'] = req.user.displayName;
             comment['authorId'] = req.user.googleId;
@@ -59,7 +59,7 @@ module.exports = app => {
     });
 
     app.post('/api/removepost', (req, res) => {
-        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+        Posts.findById("5c5f855a1c9d440000127910", function(err, post_list){
             for(let i = 0; i < post_list.posts.length; i++){
                 if(String(post_list.posts[i]._id) === req.body.id){
                     post_list.posts.splice(i, 1);
@@ -73,7 +73,7 @@ module.exports = app => {
 
     app.post('/api/removecomment', (req, res) => {
         console.log(req.body)
-        Posts.findById("5bb45460fb6fc0196221d111", function(err, post_list){
+        Posts.findById("5c5f855a1c9d440000127910", function(err, post_list){
             for(let i = 0; i < post_list.posts.length; i++){
                 if(String(post_list.posts[i]._id) === req.body.postId){
                     for(let j = 0; j < post_list.posts[i].comments.length; j++){

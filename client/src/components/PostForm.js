@@ -32,6 +32,7 @@ class PostForm extends Component {
         //console.log(this.props);
 
         function submitForm(values){
+            console.log(values)
             axios({
                 method: "post",
                 url: '/api/create_post',
