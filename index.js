@@ -16,15 +16,16 @@ mongoose.connect(key.mongoURI);
 const app = express();
 
 app.use(cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys:['fhfgh3ffgfg']
-}));
+    secret: 'bbdsghfghf45',
+    resave: false,
+    saveUninitialized: true
+  }))
 
 app.use(morgan('combined'));
 app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(bodyParser());
+app.use(bodyParser.json({ type: '*/*' }));
 
 require('./routes/authRoutes.js')(app);
 

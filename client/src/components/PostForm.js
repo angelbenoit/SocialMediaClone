@@ -6,6 +6,9 @@ import * as actions from '../Actions';
 import { connect } from 'react-redux';
 
 class PostForm extends Component {
+    componentDidMount(){
+        document.title = "Create a new post"
+    }
     //render form with correct fields
     renderField(field) {
         const { meta: { touched, error } } = field;

@@ -4,6 +4,10 @@ import { NavLink } from 'react-router-dom';
 import PostList from './PostList';
 
 class Posts extends Component {
+    componentDidMount(){
+        document.title = "Posts"
+    }
+
     render() {
         return (
             <div>

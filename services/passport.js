@@ -11,14 +11,28 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
   // Verify this email and password, call done with the user
   // if it is the correct email and password
   // otherwise, call done with false
+  console.log("===EMAIL===", email)
   User.findOne({ email: email }, function(err, user) {
-    if (err) { return done(err); }
-    if (!user) { return done(null, false); }
+    if (err) {
+      console.log("=======NOT FOUND=====")
+      return done(err);
+    }
+    if (!user) {
+      console.log("=======ERROR=====")
+      return done(null, false);
+    }
 
     // compare passwords - is `password` equal to user.password?
     user.comparePassword(password, function(err, isMatch) {
-      if (err) { return done(err); }
-      if (!isMatch) { return done(null, false); }
+      console.log("PASSWORD: ", password)
+      if (err) {
+        console.log("=======NOT FOUND222=====")
+        return done(err);
+      }
+      if (!isMatch) {
+        console.log("=======NOT MATCH=====")
+        return done(null, false);
+      }
 
       return done(null, user);
     });
@@ -33,6 +47,7 @@ const jwtOptions = {
 
 // Create JWT strategy
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
+  console.log(payload)
   // See if the user ID in the payload exists in our database
   // If it does, call 'done' with that other
   // otherwise, call done without a user object

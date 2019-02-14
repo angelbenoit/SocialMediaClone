@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 class LandingPage extends Component {
+    componentDidMount(){
+        document.title = "Social Media"
+    }
+
     render() {
         return (
             <div>
