@@ -8,7 +8,7 @@ export const fetchUser = () => async (dispatch) => {
 
 export const fetchPosts = () => async (dispatch) => {
     const res = await axios.get("/api/post_list", {headers: {authorization: localStorage.getItem("token")}});
-    console.log(`Fetching posts: ${res.data[0].posts}`);
+    //console.log(`Fetching posts: ${res.data[0].posts}`);
     dispatch({type: FETCH_POSTS, payload: res.data[0].posts});
 };
 
@@ -24,12 +24,12 @@ export const fetchSpecifiedPostData = (id) => async (dispatch) => {
             break;
         }
     }
-    console.log(matchPost);
+    //console.log(matchPost);
     dispatch({type: FETCH_POST_ITEM, payload: matchPost});
 };
 
 export const signup = (formProps, callback) => async dispatch => {
-    console.log(formProps);
+    //console.log(formProps);
     try {
       const response = await axios.post(
         '/api/signup',

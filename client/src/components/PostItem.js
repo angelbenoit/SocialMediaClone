@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class PostItem extends Component {
 
     redirectToPost(id){
-        console.log(id)
+        //console.log(id)
         this.props.history.push(`/post/${id}`);
     }
 

@@ -20,7 +20,6 @@ class PostInfo extends Component {
 
     loadPost() {
         if (this.props.postInfo && this.props.userInfo) {
-            {console.log(this.props.postInfo.author, this.props.userInfo.email)}
             let data = this.props.postInfo;
             return (
                 <div className="postInfo">

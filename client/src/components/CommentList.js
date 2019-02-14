@@ -14,6 +14,7 @@ class CommentList extends Component {
             this.props.comments.forEach(comment => {
                 commentList.push(
                     <CommentItem
+                        key={`${comment.user}${comment.date}`}
                         userName={comment.user}
                         comment={comment.comment}
                         date={comment.date}
@@ -27,7 +28,7 @@ class CommentList extends Component {
         }
         else
             return (
-                <h1>No Comments Yet</h1>
+                <h1 key="no-comment">No Comments Yet</h1>
             )
     }
     render() {

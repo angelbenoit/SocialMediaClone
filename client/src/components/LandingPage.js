@@ -65,7 +65,7 @@ class LandingPage extends Component {
                                 target="blank"
                                 className="footer__text--link"
                             >
-                                <i class="fab fa-github"></i>
+                                <i className="fab fa-github"></i>
                                 &nbsp;Source Code
                             </a>
                         </div>

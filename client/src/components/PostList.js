@@ -13,6 +13,7 @@ class PostList extends Component {
         if(this.props.postList && this.props.postList.length > 0)
             Posts = this.props.postList.map(item => {
                 return <PostItem
+                    key={`${item._id}${item.date}`}
                     name={item.author}
                     title={item.title}
                     comments={item.comments}
@@ -21,7 +22,7 @@ class PostList extends Component {
                 />
             })
         else
-            Posts.push(<h1>No posts yet</h1>);
+            Posts.push(<h1 key="no-post">No posts yet</h1>);
 
         return Posts;
     }
