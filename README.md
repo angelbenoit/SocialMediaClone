@@ -1,4 +1,11 @@
-<h1>Google Auth With Mern</h1>
+<h1>Social Media App</h1>
+
+<p>
+    This app allows users to log in, 
+    create a post, delete a post, post a comment, and delete a comment.
+</p>
+
+<p>This app uses the MongoDB, Express, React, and Node.</p>
 
 <h4>
 Add this to config/keys.js
